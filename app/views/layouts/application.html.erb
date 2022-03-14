@@ -15,11 +15,13 @@
     </div>
     <div>
       <% if @current_user %>
-      You are logged in, <% @current_user.username %>
-      <a href="/">Home</a>
-      <%#= button_to "Logout", "/sessions/logout", method: :delete %>
-      <a href="/sessions/new">Login</a>
-      <a href="/users/new">Signup</a>
+        You are logged in, <% @current_user.username %>
+        <%= button_to "Logout", "/sessions/logout", method: :delete %>
+      <% else %>
+        <a href="/">Home</a>
+        <a href="/sessions/new">Login</a>
+        <a href="/users/new">Signup</a>
+      <% end %>
     </div>
 
     <%= yield %>
