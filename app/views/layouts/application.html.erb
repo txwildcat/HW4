@@ -19,10 +19,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <% if @current_user %>
-          <a class="nav-item">Logged in as: <%= @current_user.username %> </a>
+          <a class="nav-item py-1 pe-2">Logged in as: <%= @current_user.username %> </a>
           <a class="nav-item"><%= button_to "Logout", "/sessions/logout", method: :delete %></a>
         <% else %>      
           <a class="nav-link active" href="/sessions/new">Login</a>
