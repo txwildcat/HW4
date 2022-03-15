@@ -5,17 +5,16 @@
 </p>
 
 <% if @current_user %>
-<% for post in @place.posts.where({ user_id: @current_user.id }) %>
-<div class="container"> 
-  <div class="row">
+
+<div class="row">
+  <% for post in @place.posts.where({ user_id: @current_user.id }) %>
     <div class="col-sm-6 col-md-4">
-    <h3><%= post.title %></h3>
-    <h4><%= post.posted_on %></h4>
-    <p><%= post.description %></p>
+      <h3><%= post.title %></h3>
+      <h4><%= post.posted_on %></h4>
+      <p><%= post.description %></p>
     </div>
-  </div>
+    <% end %>
 </div>
-<% end %>
 
 <p>
   <a href="/places" class="btn btn-secondary">Back to All Places</a>
